@@ -22,13 +22,13 @@ body {
   height: 10vh;
   background-color: #fdf2e9;
   transition: all ease-out 0.3s;
-}
-.nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 5rem;
+  position: relative;
 }
+
 .logo {
   height: 2rem;
 }
@@ -407,12 +407,12 @@ a:link {
 }
 
 .overlay {
-  background-color: #f7f7f7f7;
+  background-color: rgb(20, 20, 20, 0.6);
   height: 100%;
   width: 100%;
   position: fixed;
   top: 0;
-  z-index: 999;
+  z-index: 2;
   transition: ease-in 0.3s;
   transition: all ease-out 0.5s;
 }
@@ -420,7 +420,7 @@ a:link {
 .form {
   background-color: #e67e22;
   max-width: 40rem;
-  height: 60rem;
+  max-height: auto;
   margin: 0 auto;
   padding: 3rem 4rem;
   border-radius: 15px;
@@ -446,7 +446,7 @@ a:link {
 .form p {
   font-size: 1.5rem;
   line-height: 1.5;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 .form form {
   display: flex;
@@ -467,7 +467,7 @@ a:link {
   outline: none;
 }
 .form form input:nth-child(4) {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 .form form select {
   font-size: 1.8rem;
@@ -475,7 +475,7 @@ a:link {
   padding: 1rem 1rem;
   border: none;
   border-radius: 15px;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
   outline: none;
 }
 .form form button {
@@ -508,19 +508,19 @@ a:link {
   transition: all ease-out 0.5s;
 }
 .close {
-  font-size: 3rem;
   display: none;
-  position: absolute;
-  top: 10px;
-  right: 10px;
+  font-size: 3rem;
+  position: fixed;
+  top: 3.2rem;
+  right: 5rem;
   cursor: pointer;
 }
 .menu {
-  font-size: 3rem;
   display: none;
+  font-size: 3rem;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 3.2rem;
+  right: 5rem;
   cursor: pointer;
 }
 

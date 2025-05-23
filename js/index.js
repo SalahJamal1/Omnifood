@@ -10,11 +10,14 @@ const closeform = document.querySelector(".close-form");
 const menu = document.querySelector(".menu");
 const close = document.querySelector(".close");
 const nav_list = document.querySelector(".nav_list");
+const header = document.querySelector(".header");
 
 ///////////////////////
 function sectionObserve([e], observe) {
-  if (e.isIntersecting) nav.classList.remove("lazy");
-  else nav.classList.add("lazy");
+  if (e.isIntersecting) header.classList.remove("lazy");
+  else if (form.classList.contains("hidden")) {
+    header.classList.add("lazy");
+  }
   //   observe.unobserve(e.target);
 }
 const sectionInObserve = new IntersectionObserver(sectionObserve, {
@@ -27,6 +30,7 @@ sectionInObserve.observe(section1);
 function sectionsObserve(entries, observe) {
   entries.forEach((e) => {
     if (!e.isIntersecting) return;
+
     e.target.classList.remove("section-hidden");
     observe.unobserve(e.target);
   });
@@ -46,13 +50,17 @@ Openform.addEventListener("click", () => {
   form.classList.remove("hidden");
 });
 closeform.addEventListener("click", () => {
-  overlay.classList.add("hidden");
+  if (!header.classList.contains("nav_open")) {
+    overlay.classList.add("hidden");
+  }
   form.classList.add("hidden");
 });
 
 menu.addEventListener("click", () => {
-  nav_list.classList.add("nav_mobile");
+  header.classList.add("nav_open");
+  overlay.classList.remove("hidden");
 });
 close.addEventListener("click", () => {
-  nav_list.classList.remove("nav_mobile");
+  header.classList.remove("nav_open");
+  overlay.classList.add("hidden");
 });

@@ -64,37 +64,47 @@
     /* 8px / 16px = 0.5 = 50% */
     font-size: 50%;
   }
-  .nav_list {
-    opacity: 0;
-    visibility: hidden;
-  }
 
-  .nav_mobile {
-    background-color: #fff;
+  .nav {
+    background-color: rgb(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
     height: 100%;
-    width: 100%;
+    width: 60%;
     position: fixed;
     top: 0;
     left: 0;
-    opacity: 1;
-    visibility: visible;
-    display: flex;
+    opacity: 0;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    padding-top: 10rem;
+    padding-left: 15rem;
     gap: 3rem;
     z-index: 999;
-    transition: all ease-out 0.4s;
+    transform: translateX(-100%);
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    z-index: 4;
   }
-  .close {
-    display: block;
-    z-index: 999;
+  .nav_open .nav {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  .nav_open .close {
+    display: flex;
+    z-index: 9;
+    color: #fff;
   }
   .menu {
-    display: block;
+    display: flex;
+  }
+  .nav_open .menu {
+    display: none;
   }
   .section-1-imgs {
     height: 2.5rem;
+  }
+  .nav_list {
+    flex-direction: column;
+    align-items: unset;
+    gap: 4rem;
   }
   .section-1-h {
     font-size: 3.5rem;
@@ -214,6 +224,9 @@
 
   .section-4-card {
     width: 80%;
+  }
+  .nav {
+    padding-left: 5rem;
   }
   .logo {
     height: 2rem;
