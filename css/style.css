@@ -798,6 +798,7 @@ body {
   cursor: pointer;
   transition: all ease-in-out 0.3s;
   font-weight: 700;
+  align-self: end;
   &:hover,
   &:active {
     background-color: var(--white);
@@ -829,7 +830,6 @@ body {
 .icons {
   display: flex;
   margin-top: 3.3rem;
-
   margin-bottom: 7rem;
   gap: 2.4rem;
 }
