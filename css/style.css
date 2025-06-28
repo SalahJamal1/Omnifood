@@ -117,6 +117,7 @@ body {
   line-height: 1.05;
   letter-spacing: -0.5px;
   margin-bottom: 3.2rem;
+  animation: right ease-in-out 1s;
 }
 .hero-paragraph {
   font-size: 2rem;
@@ -124,6 +125,7 @@ body {
   font-weight: 300;
   color: var(--gray-medium);
   margin-bottom: 5.5rem;
+  animation: left ease-in-out 1s;
 }
 
 .hero-btns {
@@ -143,6 +145,7 @@ body {
     text-decoration: none;
     transition: all ease-in-out 0.3s;
     border: none;
+    animation: left ease-in-out 1s;
   }
   &:hover,
   &:active {
@@ -154,6 +157,7 @@ body {
   &:visited {
     background-color: var(--white);
     color: var(--gray-medium);
+    animation: right ease-in-out 1s;
   }
   &:hover,
   &:active {
@@ -190,6 +194,38 @@ body {
 
 .hero-img {
   width: 100%;
+  animation: top 1s ease-in-out;
+}
+@keyframes right {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes left {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes top {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* featured */
@@ -229,7 +265,7 @@ body {
   right: 0;
   z-index: 2;
   height: 100%;
-  width: 200px;
+  width: 170px;
   background-image: linear-gradient(
     to left,
     white 0%,
@@ -241,7 +277,7 @@ body {
   top: 0;
   left: 0;
   height: 100%;
-  width: 200px;
+  width: 170px;
   position: absolute;
   padding: 2rem 0;
   z-index: 2;
